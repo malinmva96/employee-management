@@ -3,6 +3,7 @@ import {
   ArrowSmallRightIcon,
   ChevronDownIcon,
   ExclamationCircleIcon,
+  TrashIcon,
   XMarkIcon,
 } from "@heroicons/react/20/solid";
 import { DateTime } from "luxon";
@@ -362,12 +363,13 @@ function LeaveRequest() {
                       </span>
                       {request.status === "Pending" && (
                         <button
-                          className="rounded-lg outline-none hover:bg-red-600 hover:text-white focus:ring-2 focus:ring-blue-500"
+                          className="flex px-2 py-1 rounded-md outline-none text-red-700 items-center gap-1 ring-1 ring-red-700 hover:bg-red-700 hover:text-white focus:ring-2 focus:ring-blue-500"
                           onClick={() => {
                             cancelRequest(request);
                           }}
                         >
-                          <XMarkIcon className="w-6 h-6" />
+                          <TrashIcon className="w-4 h-4" />
+                          <span>Delete</span>
                         </button>
                       )}
                     </div>

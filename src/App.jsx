@@ -88,11 +88,6 @@ function App() {
               <span className="block w-full p-4">Attendence Tracking</span>
             </div>
           </li>
-          <li>
-            <div className="block w-full">
-              <span className="block w-full p-4">Payroll Generation</span>
-            </div>
-          </li>
           <li className="mt-auto">
             <Form action="/login" method="delete">
               <button className="block w-full p-4 text-left hover:bg-blue-400/30">

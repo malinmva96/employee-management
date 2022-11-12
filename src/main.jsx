@@ -275,6 +275,7 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+        errorElement: <Login />,
         action: async ({ request }) => {
           switch (request.method) {
             case "POST": {
@@ -299,6 +300,8 @@ const router = createBrowserRouter([
                   if (res.status === 200) return await res.json();
                   throw await res.text();
                 });
+              } catch (e) {
+                throw new Error(e.message || e);
               } finally {
                 if (jwt && typeof jwt.token === "string")
                   localStorage.setItem("accessToken", jwt.token);
